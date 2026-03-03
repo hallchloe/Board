@@ -1,0 +1,3 @@
+[submodule "DecentralizedLV-Boards"]
+	path = DecentralizedLV-Boards
+	url = https://github.com/matthewpanizza/DecentralizedLV-Boards.git
