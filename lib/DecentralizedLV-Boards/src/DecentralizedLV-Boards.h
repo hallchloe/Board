@@ -2,7 +2,7 @@
 #define DECENTRALIZED_LV_BOARDS_H
 
 #include "Particle.h"
-#include <mcp_can.h>
+#include "mcp_can.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // MACROS FOR SYSTEM OPERATION
@@ -281,9 +281,9 @@ class CAN_Controller{
     void CANSend(LV_CANMessage inputMessage);
     void changeCANSpeed(uint32_t newCanSpeed);
     uint32_t CurrentBaudRate();
-    #//if PLATFORM_ID == PLATFORM_PHOTON_PRODUCTION   //When running on a board with a photon, we'll use the internal controller, no need to specify chip select pin
-    //void begin(unsigned long baudRate);
-    //#else                                           //When running on a P2 or other, we need the MCP2515, which has a chip select pin you must specify.
+    #if PLATFORM_ID == PLATFORM_PHOTON_PRODUCTION   //When running on a board with a photon, we'll use the internal controller, no need to specify chip select pin
+    void begin(unsigned long baudRate);
+    #else                                           //When running on a P2 or other, we need the MCP2515, which has a chip select pin you must specify.
     void begin(unsigned long baudRate, uint8_t chipSelectPin);
     #endif
     private:

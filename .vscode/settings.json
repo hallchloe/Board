@@ -4,5 +4,7 @@
     "files.associations": {
         "*.ino": "cpp"
     },
-    "particle.debugWarningShown": true
+    "particle.debugWarningShown": true,
+    "particle.targetPlatform": "p2",
+    "particle.firmwareVersion": "6.2.1"
 }
